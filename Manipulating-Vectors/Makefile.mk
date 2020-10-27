@@ -3,5 +3,5 @@
 
 CC = gcc;
 
-shell: main.c shell.c vector.c
+shell: main.c shell.c vector.c builtin.c
     $(CC) -g $^ -o $@
