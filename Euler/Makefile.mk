@@ -1,10 +1,12 @@
 #Chase Staples
 #Building a Makefile for problems
 
-CC = gcc# Compiler
-Flags = -g# Debugger
+# Compiler
+CC = gcc
+# Debugger
+Flags = -g
 
-Dependency = main.c p003.c p005.c p006.c
+Dependency = main.c problems.c problems.h
 
 #Make p003
 p003: $(Dependency)

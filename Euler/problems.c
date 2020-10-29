@@ -8,10 +8,13 @@
 #include <errno.h>
 #include <cpio.h>
 #include "problems.h"
+#include <time.h>
 
 //Problem 3:
 int largestPrimeFactor(long long number){
-
+        clock_t start, end;
+        double cpu_time_used;
+        start = clock();
         long long prime = 2;
         while(number > prime){
                 if(number % prime == 0){
@@ -21,6 +24,9 @@ int largestPrimeFactor(long long number){
                         prime = prime + 1;
                 }
         }
+        end = clock();
+        cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+        printf("Problem 3: Took %f to execute \n", cpu_time_used);
         return prime;
 }
 
