@@ -10,11 +10,8 @@
 #include "problems.h"
 #include <time.h>
 
-//Problem 3:
+//Problem 3: Finding the largest Prime Factor
 int largestPrimeFactor(long long number){
-        clock_t start, end;
-        double cpu_time_used;
-        start = clock();
         long long prime = 2;
         while(number > prime){
                 if(number % prime == 0){
@@ -24,9 +21,6 @@ int largestPrimeFactor(long long number){
                         prime = prime + 1;
                 }
         }
-        end = clock();
-        cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-        printf("Problem 3: Took %f to execute \n", cpu_time_used);
         return prime;
 }
 
@@ -46,12 +40,14 @@ int smallestMultiples(int firstNumber, int secondNumber){
         return sm;
 }
 
-//Problem 6
+//Problem 6: Finding the difference of sum squares
 int sumSquareDifference(int number){
         int sum1 = 0;
         int sum2 = 0;
         for(int i = 1; i < number + 1; i++){
+		//Take i times itself and adding it to sum
                 sum1 += i * i;
+		//Adding i to sum from i to number
                 sum2 += i;
         }
         sum2 = sum2 * sum2;
